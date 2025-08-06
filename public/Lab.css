@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 50px;  /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    object-fit: contain;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover {
+    background-color: #34495e;
+    border-radius: 4px;
+}
+
+main {
+    padding: 0;
+    max-width: none;
+}
+
+#booking-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #34495e;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Add Lab Cards Styling */
+#labs-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+#labs-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.lab-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.lab-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.lab-card:hover {
+    transform: translateY(-5px);
+}
+
+.lab-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.lab-card h3 {
+    padding: 1rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.lab-card p {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.lab-details {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.book-btn {
+    display: block;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.75rem;
+    margin: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #34495e;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.lab-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.info-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-section ul li {
+    padding: 5px 0;
+    color: #666;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+/* Search and Filter Styles */
+.search-filter-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-box input {
+    padding: 0.5rem;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-options {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Booking History Styles */
+#booking-history {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.booking-tabs {
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border: none;
+    background: #f5f6fa;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Calendar Styles */
+.calendar-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+.calendar-header h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#currentWeek {
+    font-size: 1.1rem;
+    color: #455a64;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.day-header {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    background: #2c3e50;
+    color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+    line-height: 1.4;
+}
+
+.day-name {
+    font-size: 1rem;
+}
+
+.day-date {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+#calendarLab {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calendar-nav button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar-nav button:hover {
+    background: #34495e;
+}
+
+.calendar-grid {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.time-column {
+    width: 100px;
+    background: #f8f9fa;
+    border-right: 1px solid #ddd;
+}
+
+.time-header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: #2c3e50;
+    color: white;
+}
+
+.time-slot {
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    padding: 0.5rem;
+}
+
+.slot-content {
+    text-align: center;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.slot.available .slot-content {
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+.slot.booked .slot-content {
+    color: #c62828;
+    font-weight: 500;
+}
+
+.slot.selected .slot-content {
+    color: #1565c0;
+    font-weight: 500;
+}
+
+.slot-status {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.slot.available .slot-status {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.slot.booked .slot-status {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+.slot.selected .slot-status {
+    background-color: #90caf9;
+    color: #1565c0;
+}
+
+.days-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.day-column {
+    border-right: 1px solid #ddd;
+}
+
+.day-column:last-child {
+    border-right: none;
+}
+
+.slot {
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.slot.available {
+    background: #e8f5e9;
+}
+
+.slot.available:hover {
+    background: #c8e6c9;
+}
+
+.slot.booked {
+    background: #ffebee;
+}
+
+.slot.selected {
+    background: #bbdefb;
+}
+
+.calendar-legend {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-color.available {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+}
+
+.legend-color.booked {
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+}
+
+.legend-color.selected {
+    background: #bbdefb;
+    border: 1px solid #90caf9;
+}
+
+/* Feedback Styles */
+#feedback-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 24px;
+}
+
+.star {
+    color: #ddd;
+    cursor: pointer;
+}
+
+.star.active {
+    color: #ffd700;
+}
+
+.feedback-form {
+    margin-top: 1rem;
+}
+
+.filter-section {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.filter-controls .form-group {
+    min-width: 200px;
+}
+
+.reset-btn {
+    background-color: #6c757d;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.reset-btn:hover {
+    background-color: #5a6268;
+} 
